@@ -36,7 +36,7 @@ describe('Login page tests is isolation', () => {
     loginMocks.mockFailure(errorMessage)
 
     // when
-    cy.get('.from-control').should('have.length', 2)
+    cy.get('.form-control').should('have.length', 2)
     cy.percySnapshot('LoginPage')
     loginPage.attemptLogin('wrong', 'wrong')
 
@@ -50,7 +50,7 @@ describe('Login page tests is isolation', () => {
 
     // then
     cy.url().should('contain', 'register')
-    cy.get('.from-control').should('have.length', 5)
+    cy.get('.form-control').should('have.length', 5)
     cy.percySnapshot('RegisterPage')
   })
 
