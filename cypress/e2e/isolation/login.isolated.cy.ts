@@ -35,6 +35,7 @@ describe('Login page tests is isolation', () => {
     loginMocks.mockFailure(errorMessage)
 
     // when
+    cy.get('.from-control').should('have.length', 5)
     loginPage.attemptLogin('wrong', 'wrong')
 
     // then
@@ -47,6 +48,7 @@ describe('Login page tests is isolation', () => {
 
     // then
     cy.url().should('contain', 'register')
+    cy.get('.from-control').should('have.length', 5)
   })
 
 })
